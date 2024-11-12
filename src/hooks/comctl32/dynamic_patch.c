@@ -3,6 +3,7 @@
  * Copyright 2020 Luiz Lopes <luizinrc@hotmail.com>
  * Copyright 2020-2021 fumitti <fumitti@gmail.com>
  * Copyright 2024 Acrisio Filho
+ * Copyright 2024 Vitinho Nunes
  *
  * Permission to use, copy, modify, and/or distribute this software for any purpose
  * with or without fee is hereby granted, provided that the above copyright notice
@@ -286,6 +287,7 @@ static void PatchGG_SEA() {
         Log("Patched GG check routines (SEA S1 2.16a)\r\n");
     } else if (compare_virtual_memory(0x0066C727, 0xFF6B24E8)) {
         Patch((LPVOID)0x0066C727, "\xE9\x00\x00\x00\x00", 5);
+        Patch((LPVOID)0x0066C60F, "\x84", 1);
         Log("Patched GG check routines (SEA S2 3.20)\r\n");
     }
 }
